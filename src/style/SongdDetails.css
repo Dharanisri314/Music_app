@@ -1,3 +1,4 @@
+/* Song Details Page Container */
 .song-details-page {
   display: flex;
   justify-content: center;
@@ -6,25 +7,26 @@
   width: 100%; 
   padding: 40px;
   box-sizing: border-box;
-  margin: 50px;
+  margin: 50px auto;
 }
 
+/* Main Song Container */
 .song-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 60px;
-  background: #fff;
+  background: #ffffff;
   border-radius: 20px;
   padding: 40px 60px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  flex-wrap: wrap;
-
-  max-width: 1000px;       /* Add this to limit width */
+  max-width: 1000px;
   width: 100%;
-  margin: auto;            /* This centers it */
   box-sizing: border-box;
+  margin: auto;
+  align-items: center;
 }
 
-/* Left side (Title + Image) */
+/* Left Side: Song Title and Image */
 .left-side {
   text-align: center;
 }
@@ -44,12 +46,12 @@
   box-shadow: 0 10px 25px rgba(126, 91, 239, 0.2);
 }
 
-
+/* Right Side: Details and Button */
 .right-side {
   display: flex;
   flex-direction: column;
-  gap: 15px;
   justify-content: center;
+  gap: 15px;
   padding-right: 20px;
 }
 
@@ -78,7 +80,7 @@
   transform: translateY(-3px);
 }
 
-/* ✅ Responsive stacking on small screens */
+/* Responsive for Tablets and Mobiles */
 @media (max-width: 768px) {
   .song-container {
     flex-direction: column;
@@ -88,5 +90,6 @@
 
   .right-side {
     align-items: center;
+    padding: 0;
   }
 }

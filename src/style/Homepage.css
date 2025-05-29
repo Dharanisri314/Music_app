@@ -1,18 +1,68 @@
 /* Overflow fix */
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   width: 100%;
-  height: 100%;
+  height: auto;
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(to right, #e0c3fc, #8ec5fc);
   color: #2d004d;
 }
 
+/* Header Styles */
+.homepage-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #ffffffcc;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.homepage-header .logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #4a148c;
+  user-select: none;
+  cursor: default;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 15px;
+  margin-right: 10%;
+}
+
+.header-buttons button {
+  padding: 7px 18px;
+  font-size: 14px;
+  border: 1.5px solid #6a1b9a;
+  border-radius: 25px;
+  background-color: transparent;
+  color: #6a1b9a;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.header-buttons button:hover {
+  background-color: #6a1b9a;
+  color: #fff;
+  border-color: #6a1b9a;
+}
+
 /* Container for Home Page */
 .homepage-container {
-  padding: 100px 15px 40px 15px; /* Top padding increased for space from fixed navbar */
+  margin-top: 5%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,7 +74,7 @@ html, body {
 /* Heading Style */
 .homepage-container h1 {
   font-size: 36px;
-  margin: 30px 0 40px; /* Top, left/right, bottom */
+  margin: 30px 0 40px;
   color: #4a148c;
   font-weight: 600;
   text-align: center;
@@ -33,9 +83,9 @@ html, body {
 /* Grid for Songs */
 .song-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 35px;
-  width: 100%;
+  width: 90%;
   max-width: 1300px;
   justify-items: center;
 }
@@ -47,12 +97,12 @@ html, body {
   padding: 20px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 210px;
+  width: 100%;
+  max-width: 210px;
   box-shadow: 0 4px 15px rgba(138, 43, 226, 0.2);
   border: 1px solid #e0b3ff;
 }
 
-/* Card Hover Effect */
 .song-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 10px 25px rgba(138, 43, 226, 0.35);
@@ -76,7 +126,7 @@ html, body {
   margin-bottom: 10px;
 }
 
-/* Button Styling */
+/* Song Card Button */
 .song-card button {
   padding: 8px 14px;
   background-color: #7e57c2;
@@ -92,19 +142,148 @@ html, body {
   background-color: #9575cd;
 }
 
-/* Responsive Grid Adjustments */
+/* ------------------ RESPONSIVE MEDIA QUERIES ------------------ */
+
+/* Small Laptops (Max width: 1024px) */
 @media (max-width: 1024px) {
   .song-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
   }
 }
 
+/* Tablet Devices (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .song-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .homepage-container h1 {
+    font-size: 34px;
+    margin-bottom: 35px;
+  }
+
+  .song-card {
+    padding: 18px;
+  }
+
+  .song-title {
+    font-size: 17px;
+  }
+
+  .song-card button {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  .song-image {
+    width: 140px;
+    height: 140px;
+  }
+
+  .header-buttons button {
+    padding: 7px 16px;
+    font-size: 14px;
+  }
+
+  .homepage-header .logo {
+    font-size: 21px;
+  }
+}
+
+/* Mobile Devices (Max width: 768px) */
+@media (max-width: 768px) {
+  .song-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .homepage-container h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+}
+
+/* Small Devices (Max width: 600px) */
 @media (max-width: 600px) {
   .song-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .homepage-container h1 {
     font-size: 28px;
+    margin-bottom: 25px;
+  }
+
+  .homepage-header {
+    padding: 0 15px;
+    justify-content: space-between;
+  }
+
+  .homepage-header .logo {
+    font-size: 20px;
+  }
+
+  .header-buttons button {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .song-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .song-card {
+    padding: 15px;
+  }
+
+  .song-title {
+    font-size: 16px;
+  }
+
+  .song-card button {
+    font-size: 13px;
+  }
+}
+
+/* Very Small Devices (Max width: 400px) */
+@media (max-width: 400px) {
+  .homepage-header .logo {
+    font-size: 18px;
+  }
+
+  .header-buttons button {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .homepage-container h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  .song-grid {
+    gap: 15px;
+  }
+
+  .song-card {
+    padding: 12px;
+  }
+
+  .song-title {
+    font-size: 15px;
+  }
+
+  .song-card button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .song-image {
+    width: 100px;
+    height: 100px;
   }
 }
