@@ -1,0 +1,92 @@
+.song-details-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%; 
+  padding: 40px;
+  box-sizing: border-box;
+  margin: 50px;
+}
+
+.song-container {
+  display: flex;
+  gap: 60px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px 60px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+
+  max-width: 1000px;       /* Add this to limit width */
+  width: 100%;
+  margin: auto;            /* This centers it */
+  box-sizing: border-box;
+}
+
+/* Left side (Title + Image) */
+.left-side {
+  text-align: center;
+}
+
+.song-title {
+  font-size: 28px;
+  color: #6a1b9a;
+  margin-bottom: 20px;
+}
+
+.left-side img {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #997cce;
+  box-shadow: 0 10px 25px rgba(126, 91, 239, 0.2);
+}
+
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  padding-right: 20px;
+}
+
+.right-side p {
+  font-size: 18px;
+  color: #443f56;
+  margin: 0;
+}
+
+.right-side button {
+  margin-top: 20px;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #7e57c2;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(128, 105, 184, 0.4);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.right-side button:hover {
+  background-color: #9f7aea;
+  transform: translateY(-3px);
+}
+
+/* ✅ Responsive stacking on small screens */
+@media (max-width: 768px) {
+  .song-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .right-side {
+    align-items: center;
+  }
+}

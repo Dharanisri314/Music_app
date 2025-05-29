@@ -1,0 +1,76 @@
+/* Singup.css */
+
+.auth-container {
+  height: 100vh; 
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  background: #f0f2f5;    
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.auth-form {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.auth-form h2 {
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: #333;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: #4caf50; 
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 12px 0;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.auth-form button:hover {
+  background-color: #43a047;
+}
+
+.auth-form p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.auth-form p a {
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-form p a:hover {
+  text-decoration: underline;
+}

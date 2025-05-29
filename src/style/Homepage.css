@@ -1,0 +1,110 @@
+/* Overflow fix */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+  color: #2d004d;
+}
+
+/* Container for Home Page */
+.homepage-container {
+  padding: 100px 15px 40px 15px; /* Top padding increased for space from fixed navbar */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Heading Style */
+.homepage-container h1 {
+  font-size: 36px;
+  margin: 30px 0 40px; /* Top, left/right, bottom */
+  color: #4a148c;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Grid for Songs */
+.song-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 35px;
+  width: 100%;
+  max-width: 1300px;
+  justify-items: center;
+}
+
+/* Song Card */
+.song-card {
+  background: #ffffffc9;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 210px;
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.2);
+  border: 1px solid #e0b3ff;
+}
+
+/* Card Hover Effect */
+.song-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(138, 43, 226, 0.35);
+}
+
+/* Song Image */
+.song-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+  border: 3px solid #997cce;
+}
+
+/* Song Title */
+.song-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #6a1b9a;
+  margin-bottom: 10px;
+}
+
+/* Button Styling */
+.song-card button {
+  padding: 8px 14px;
+  background-color: #7e57c2;
+  color: white;
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.song-card button:hover {
+  background-color: #9575cd;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width: 1024px) {
+  .song-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .song-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .homepage-container h1 {
+    font-size: 28px;
+  }
+}

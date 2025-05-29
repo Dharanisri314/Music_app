@@ -1,0 +1,119 @@
+/* Main Wrapper */
+.auth-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Form Styling */
+form {
+  background: #ffffff;
+  padding: 20px 28px; /* reduced padding */
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  max-width: 400px; /* smaller max width */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* reduced gap */
+  box-sizing: border-box;
+}
+
+/* Form Heading */
+form h2 {
+  text-align: center;
+  color: #4b2c91;
+  font-size: 1.5rem; /* reduced font size */
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* Input Fields & Textarea & Select */
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px; /* smaller padding */
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem; /* slightly smaller text */
+  background-color: #fff;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  resize: none;
+}
+
+/* Placeholder Text */
+input::placeholder,
+textarea::placeholder {
+  color: #999;
+}
+
+/* Focus Effects */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 6px rgba(102, 126, 234, 0.4);
+  outline: none;
+}
+
+/* Dropdown Styling */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg width='14' height='10' viewBox='0 0 14 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%23667eea' stroke-width='2' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 14px 10px;
+}
+
+/* Textarea Styling */
+textarea {
+  min-height: 60px; /* reduced from 80px */
+  line-height: 1.4;
+}
+
+/* Submit Button */
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover + Active Effects */
+button[type="submit"]:hover {
+  background-color: #5469d4;
+}
+
+button[type="submit"]:active {
+  background-color: #4356b3;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  form {
+    padding: 18px 16px;
+  }
+
+  form h2 {
+    font-size: 1.3rem;
+  }
+}
